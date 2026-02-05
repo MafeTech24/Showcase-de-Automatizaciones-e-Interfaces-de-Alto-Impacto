@@ -217,7 +217,7 @@ export const projects: Project[] = [
   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
   contribution: "• Relevamiento estratégico de objetivos de negocio y CX.\n• Uso de IA Generativa para recursos gráficos de alto impacto.\n• Arquitectura de UI orientada a la generación de leads (consultas).\n• Optimización de performance para carga de galerías de alta resolución.",
   liveUrl: "https://furnarius-eventos.vercel.app/",
-  repoUrl: "https://github.com/MafeTech24/furnariusEventos",
+  //repoUrl: "https://github.com/MafeTech24/furnariusEventos",
   image: "furnarius.jpg",
   },
   {
@@ -228,7 +228,7 @@ export const projects: Project[] = [
   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
   contribution: "• Consultoría de negocio para definir la jerarquía de productos.\n• Diseño de UI enfocado en la visualización de alta calidad.\n• Estructura escalable para actualización constante de stock.\n• Optimización de velocidad de carga para dispositivos móviles.",
   liveUrl: "https://elreydelnorte-2.vercel.app/",
-  repoUrl: "https://github.com/ProyectosVibeCoding/elreydelnorte2",
+  //repoUrl: "https://github.com/ProyectosVibeCoding/elreydelnorte2",
   image: "elReyNorte.jpg",
   },
   {
@@ -239,7 +239,7 @@ export const projects: Project[] = [
   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
   contribution: "• Curaduría visual y diseño de identidad digital.\n• Desarrollo responsive con enfoque en la experiencia táctil/visual.\n• Implementación de secciones de 'Proceso Creativo' para aumentar el valor percibido.\n• Optimización de imágenes para mantener calidad sin sacrificar rendimiento.",
   liveUrl: "https://artesaniaveta.vercel.app/",
-  repoUrl: "https://github.com/ProyectosVibeCoding/artesaniaMadera",
+  //repoUrl: "https://github.com/ProyectosVibeCoding/artesaniaMadera",
   image: "artesani&beta.jpg",
   },
   {
@@ -250,7 +250,7 @@ export const projects: Project[] = [
   stack: ["React", "Vite", "JavaScript", "Bootstrap", "GitHub"],
   contribution: "• Diseño de la arquitectura de componentes. \n• Implementación de routing y navegación. \n• Manejo de estado global para el carrito de compras. \n• Desarrollo de componentes reutilizables. \n• Optimización de rendimiento y experiencia de usuario.",
   liveUrl: "https://pixelymoda.vercel.app/",
-  repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
+  //repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
   image: "logoPyM.jpg",
   },
 {
@@ -260,7 +260,7 @@ export const projects: Project[] = [
   solution: "Arquitectura de flujo automatizado que transforma audio en documentos de gestión. Utiliza IA para extraer puntos clave y actualizar tableros Kanban de forma autónoma.",
   stack: ["n8n", "Google Drive", "Google Docs", "Google Sheets", "IA (LLM)"],
   contribution: "• Ingeniería de prompts para la extracción precisa de tareas.\n• Integración de APIs de Google para gestión documental.\n• Diseño de lógica de actualización asíncrona en Sheets.\n• Testing de precisión en transcripción y categorización.",
-  repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
+  //repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
   image: "n8n-workflow.jpg",
 },  
   {
@@ -300,7 +300,7 @@ export const projects: Project[] = [
     stack: ["JavaScript", "HTML", "bootstrap", "Github", "Vercel"],
     contribution: "Desarrollo completo del frontend y lógica del carrito.",
     liveUrl: "https://dulceybellaperfumes.vercel.app/",
-    repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
+    //repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
     image: "dulceybella.jpg",
   },  
   //{
