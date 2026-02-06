@@ -18,12 +18,12 @@ export interface Skill {
   category: 'tech' | 'ia' | 'tools' | 'soft';
 }
 
-export interface Education {
-  title: string;
-  institution: string;
-  year: string;
-  category: 'degree' | 'course' | 'ia' | 'diploma';
-}
+// export interface Education {
+//   title: string;
+//   institution: string;
+//   year: string;
+//   category: 'degree' | 'course' | 'ia' | 'diploma';
+// }
 
 export interface Experience {
   title: string;
@@ -34,8 +34,8 @@ export interface Experience {
 
 export const personalInfo = {
   name: "María Fernanda Moreno",
-  role: "AI Automation Specialist & Full Stack Developer | Experta en Vibe Coding y Optimización de Procesos con IA",
-  subtitle: "Transformo ideas en interfaces de alto impacto y procesos manuales en flujos inteligentes con IA para maximizar la productividad de tu negocio.",
+  role: "AI Automation & Full Stack Builder | Desarrollo Web en Vibe Coding y Optimización de Procesos con IA",
+  subtitle: "Ayudo a empresas a escalar mediante el desarrollo de interfaces modernas y la integración estratégica de IA para automatizar tareas repetitivas.",
   initials: "MF",
 };
 
@@ -44,7 +44,7 @@ export const aboutText = `Soy una desarrolladora enfocada en la intersección de
 
 - Desarrollo Full Stack (MERN): Construyo interfaces modernas, rápidas y escalables con React y TypeScript, asegurando que cada componente esté optimizado para la mejor experiencia de usuario.
 
-- AI Automation Specialist: Me especializo en diseñar flujos de trabajo inteligentes con n8n y Make, integrando herramientas como Google Workspace e IA para eliminar tareas repetitivas y reducir errores operativos.
+-  IA & Automatización de Procesos: Me especializo en diseñar flujos de trabajo inteligentes con n8n y Make, integrando herramientas como Google Workspace e IA para eliminar tareas repetitivas y reducir errores operativos.
 
 - Estrategia 360° (CX + Digital Marketing): Gracias a mi trayectoria en Customer Experience y formación en Marketing Digital y Social Media, no solo escribo código; diseño soluciones orientadas a la conversión y el posicionamiento. Identifico los puntos de dolor de tu negocio para crear productos técnicos que potencien tu presencia digital y mejoren la relación con tus clientes de forma medible.`;
 export const softSkills = [
@@ -79,11 +79,13 @@ export const techSkills: Skill[] = [
   { name: "Generación de imágenes y video con IA", category: "ia" },
   { name: "Firebase", category: "tech" },
   { name: "Supabase", category: "tech" },
-  { name: "SQL", category: "tech" }
-
+  { name: "SQL", category: "tech" },
+  { name: "Lovable", category: "ia" },
+  { name: "Google Studio AI", category: "ia" },
+  { name: "Google Antigravity", category: "ia" }
 ];
 
-export const education: Education[] = [
+//export const education: Education[] = [
   // Degrees
   /*{
     title: "Licenciatura en Producción de Bio-Imágenes",
@@ -91,7 +93,7 @@ export const education: Education[] = [
     year: "2004",
     category: "degree",
   },*/
-  {
+  /*{
     title: "Carrera Fullstack (MERN)",
     institution: "Coderhouse",
     year: "2024 – Actualidad",
@@ -160,8 +162,8 @@ export const education: Education[] = [
     institution: "Coderhouse",
     year: "2025",
     category: "course",
-  }, **/
-];
+  }, 
+];*/
 
 export const experiences: Experience[] = [
   {
@@ -193,7 +195,7 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [ 
   {
   id: "chatbot-furnarius",
-  title: "Asistente Inteligente de CX — Furnarius Eventos",
+  title: "Asistente Inteligente de CX",
   problem: "Falta de respuesta inmediata a consultas complejas de ambientación y mobiliario, afectando la conversión de clientes potenciales.",
   solution: "Flujo de IA conversacional que procesa entradas de audio y texto, automatizando la calificación de leads y la respuesta personalizada mediante modelos de lenguaje avanzados.",
   stack: ["n8n", "Webhooks", "IA / LLM", "HTTP Request", "WhatsApp API"],
@@ -217,7 +219,7 @@ export const projects: Project[] = [
   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
   contribution: "• Relevamiento estratégico de objetivos de negocio y CX.\n• Uso de IA Generativa para recursos gráficos de alto impacto.\n• Arquitectura de UI orientada a la generación de leads (consultas).\n• Optimización de performance para carga de galerías de alta resolución.",
   liveUrl: "https://furnarius-eventos.vercel.app/",
-  repoUrl: "https://github.com/MafeTech24/furnariusEventos",
+  //repoUrl: "https://github.com/MafeTech24/furnariusEventos",
   image: "furnarius.jpg",
   },
   {
@@ -228,20 +230,20 @@ export const projects: Project[] = [
   stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
   contribution: "• Consultoría de negocio para definir la jerarquía de productos.\n• Diseño de UI enfocado en la visualización de alta calidad.\n• Estructura escalable para actualización constante de stock.\n• Optimización de velocidad de carga para dispositivos móviles.",
   liveUrl: "https://elreydelnorte-2.vercel.app/",
-  repoUrl: "https://github.com/ProyectosVibeCoding/elreydelnorte2",
+  //repoUrl: "https://github.com/ProyectosVibeCoding/elreydelnorte2",
   image: "elReyNorte.jpg",
   },
   {
   id: "artesaniaVeta",
-  title: "Artesanía & Veta — Portfolio de Diseño de Autor",
-  problem: "Dificultad para transmitir el valor artesanal y la exclusividad de las piezas a través de canales tradicionales, limitando el alcance a un público premium.",
-  solution: "Sitio web de alta estética visual con enfoque en Storytelling. Se priorizó la jerarquía visual y el detalle de los materiales para posicionar la marca en el segmento de muebles de lujo.",
-  stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
-  contribution: "• Curaduría visual y diseño de identidad digital.\n• Desarrollo responsive con enfoque en la experiencia táctil/visual.\n• Implementación de secciones de 'Proceso Creativo' para aumentar el valor percibido.\n• Optimización de imágenes para mantener calidad sin sacrificar rendimiento.",
+  title: "Artesanía & Veta — E-commerce de Lujo con IA Integrada",
+  problem: "Necesidad de transformar un catálogo estático en una experiencia de compra premium y personalizada que incluya herramientas de asistencia inteligente.",
+  solution: "Plataforma e-commerce de alta gama iniciada con Vibe Coding y refinada manualmente. Incluye prototipos de Chatbot inteligente y un Diseñador de muebles asistido por IA (Google AI Studio), demostrando el futuro de la personalización en el segmento de lujo.",
+  stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Google AI Studio", "Vercel", "Lovable (IA)"],
+  contribution: "• Desarrollo de arquitectura e-commerce y refinamiento manual de lógica de negocio en TypeScript.\n• Diseño e integración de interfaz para Chatbot y Diseñador de muebles asistido por IA.\n• Implementación de la lógica de conexión con Google AI Studio (maquetado para demo pública).\n• Gestión de base de datos con Supabase para administración dinámica de productos.",
   liveUrl: "https://artesaniaveta.vercel.app/",
-  repoUrl: "https://github.com/ProyectosVibeCoding/artesaniaMadera",
+  //repoUrl: "https://github.com/ProyectosVibeCoding/artesaniaMadera",
   image: "artesani&beta.jpg",
-  },
+},
   {
   id: "pixelymoda",
   title: "Pixel&Moda — E-commerce (Proyecto Final React))",
@@ -250,7 +252,7 @@ export const projects: Project[] = [
   stack: ["React", "Vite", "JavaScript", "Bootstrap", "GitHub"],
   contribution: "• Diseño de la arquitectura de componentes. \n• Implementación de routing y navegación. \n• Manejo de estado global para el carrito de compras. \n• Desarrollo de componentes reutilizables. \n• Optimización de rendimiento y experiencia de usuario.",
   liveUrl: "https://pixelymoda.vercel.app/",
-  repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
+  //repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
   image: "logoPyM.jpg",
   },
 {
@@ -260,7 +262,7 @@ export const projects: Project[] = [
   solution: "Arquitectura de flujo automatizado que transforma audio en documentos de gestión. Utiliza IA para extraer puntos clave y actualizar tableros Kanban de forma autónoma.",
   stack: ["n8n", "Google Drive", "Google Docs", "Google Sheets", "IA (LLM)"],
   contribution: "• Ingeniería de prompts para la extracción precisa de tareas.\n• Integración de APIs de Google para gestión documental.\n• Diseño de lógica de actualización asíncrona en Sheets.\n• Testing de precisión en transcripción y categorización.",
-  repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
+  //repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
   image: "n8n-workflow.jpg",
 },  
   {
@@ -300,7 +302,7 @@ export const projects: Project[] = [
     stack: ["JavaScript", "HTML", "bootstrap", "Github", "Vercel"],
     contribution: "Desarrollo completo del frontend y lógica del carrito.",
     liveUrl: "https://dulceybellaperfumes.vercel.app/",
-    repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
+    //repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
     image: "dulceybella.jpg",
   },  
   //{
@@ -325,7 +327,7 @@ export const projects: Project[] = [
 export const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "Sobre mí" },
-  { href: "#education", label: "Estudios" },
+  //{ href: "#education", label: "Estudios" },
   { href: "#projects", label: "Proyectos" },
-  { href: "#skills", label: "Habilidades" },
+  //{ href: "#skills", label: "Habilidades" },
 ];

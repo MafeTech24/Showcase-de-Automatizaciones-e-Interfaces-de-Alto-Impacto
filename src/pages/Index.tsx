@@ -2,9 +2,9 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import EducationSection from "@/components/EducationSection";
+// import EducationSection from "@/components/EducationSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
+// import SkillsSection from "@/components/SkillsSection";
 import Footer from "@/components/Footer";
 import { personalInfo } from "@/data/portfolio";
 
@@ -49,9 +49,9 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
-          <EducationSection />
+          {/* <EducationSection /> */}
           <ProjectsSection />
-          <SkillsSection />          
+          {/* <SkillsSection /> */}
         </main>
         <Footer />
       </div>
