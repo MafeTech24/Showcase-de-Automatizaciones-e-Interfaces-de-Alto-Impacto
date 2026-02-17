@@ -196,6 +196,39 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [ 
   {
+  id: "emily-hair-studio-web-app",
+  title: "Plataforma Web con Diagnóstico Inteligente e Integración WhatsApp",
+  problem:
+    "Los salones de belleza suelen depender de WhatsApp para la atención, pero reciben consultas incompletas, sin contexto ni datos estructurados. Esto genera múltiples intercambios innecesarios, pérdida de tiempo operativo y dificulta brindar presupuestos precisos. Además, muchos negocios carecen de una presencia digital profesional optimizada para conversión.",
+
+  solution:
+    "Aplicación web profesional desarrollada en React + TypeScript que digitaliza el proceso de pre-consulta mediante un sistema de diagnóstico capilar inteligente. El formulario captura datos estructurados, permite adjuntar imágenes y genera automáticamente un mensaje formateado que se envía por WhatsApp, reduciendo fricción operativa y mejorando la calidad de los leads. La plataforma combina diseño orientado a conversión con arquitectura modular y experiencia de usuario optimizada.",
+
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "WhatsApp Deep Linking", "JavaScript", "Responsive Design", "Component Architecture"],
+
+  contribution:
+    "• Diseño e implementación completa de la aplicación frontend utilizando arquitectura basada en componentes reutilizables\n" +
+    "• Desarrollo de sistema de diagnóstico interactivo con múltiples inputs, validación y generación dinámica de mensajes\n" +
+    "• Integración con WhatsApp mediante deep linking y generación automática de payload estructurado\n" +
+    "• Implementación de carga de imágenes desde el cliente como parte del flujo de diagnóstico\n" +
+    "• Construcción de interfaz responsive optimizada para mobile-first y conversión de usuarios\n" +
+    "• Desarrollo de animaciones avanzadas utilizando Framer Motion para mejorar la experiencia de usuario\n" +
+    "• Implementación de sistema de diseño consistente utilizando Tailwind y variables CSS personalizadas\n" +
+    "• Optimización de performance y estructura del proyecto utilizando Vite como build tool\n" +
+    "• Deployment completo en Vercel con pipeline de integración continua desde GitHub",
+
+  metrics:
+    "📱 Aplicación 100% responsive | ⚡ Tiempo de carga optimizado con Vite | 🎯 Optimización orientada a conversión | 🔗 Integración directa con canal comercial",
+
+  image: "emilyHair.jpg",
+
+  repoUrl: "https://github.com/MafeTech24/emilyHair",
+
+  liveUrl: "https://emilyhairstudio.vercel.app/"
+
+  // loom: agregar demo después
+},
+  {
   id: "document-processing-ai-pipeline",
   title: "Automatización de Procesamiento de Documentos con IA",
   problem: "El procesamiento manual de facturas y documentos administrativos consume horas de trabajo, genera errores humanos en la extracción de datos, y carece de trazabilidad. Las empresas necesitan procesar grandes volúmenes de documentos (facturas, recibos, contratos) de forma rápida, precisa y auditable.",
