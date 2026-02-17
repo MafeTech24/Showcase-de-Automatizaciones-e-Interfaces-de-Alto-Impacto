@@ -196,6 +196,97 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [ 
   {
+  id: "production-grade-error-handling-n8n",
+
+  title: "Sistema de Manejo de Errores y Alertas en Tiempo Real para Automatizaciones",
+
+  problem:
+    "Las automatizaciones suelen fallar en silencio, generando pérdida de datos, interrupciones operativas y falta de visibilidad. Sin un sistema centralizado de monitoreo, los errores pueden pasar desapercibidos durante horas o días, afectando la confiabilidad de procesos críticos de negocio.",
+
+  solution:
+    "Desarrollo de un sistema global de manejo de errores utilizando n8n que captura automáticamente cualquier fallo en los workflows, normaliza los datos del error, los registra en Google Sheets para auditoría persistente y envía alertas en tiempo real vía email. Esta arquitectura permite monitoreo continuo, trazabilidad completa y mejora significativa en la confiabilidad de automatizaciones productivas.",
+
+  stack: [
+    "n8n",
+    "JavaScript",
+    "Google Sheets API",
+    "Gmail API",
+    "Workflow Automation",
+    "Error Monitoring",
+    "Automation Architecture"
+  ],
+
+  contribution:
+    "• Diseño e implementación de arquitectura global de manejo de errores reutilizable para cualquier workflow\n" +
+    "• Implementación de Error Trigger para captura automática de fallos en tiempo real\n" +
+    "• Desarrollo de lógica de normalización de errores mediante nodo Code en JavaScript\n" +
+    "• Persistencia de logs en Google Sheets para auditoría y trazabilidad completa\n" +
+    "• Integración de sistema de alertas vía Gmail para notificación inmediata de incidentes\n" +
+    "• Configuración segura utilizando variables de entorno para protección de credenciales\n" +
+    "• Estructuración del proyecto para deployment y reutilización en entornos productivos\n" +
+    "• Documentación profesional y preparación del workflow como proyecto portfolio listo para producción",
+
+  image: "errorHandler.jpg",
+
+  repoUrl:
+    "https://github.com/MafeTech24/production-grade-error-handling-n8n",
+
+  // liveUrl: opcional si querés agregar demo visual
+},
+{
+  id: "chatbot-furnarius",
+  title: "Asistente Inteligente de CX",
+  problem: "Falta de respuesta inmediata a consultas complejas de ambientación y mobiliario, afectando la conversión de clientes potenciales.",
+  solution: "Flujo de IA conversacional que procesa entradas de audio y texto, automatizando la calificación de leads y la respuesta personalizada mediante modelos de lenguaje avanzados.",
+  stack: ["n8n", "Webhooks", "IA / LLM", "HTTP Request", "WhatsApp API"],
+  contribution: "• Diseño de flujo lógico para el procesamiento de archivos de audio.\n• Implementación de nodos de decisión (Switch) para rutas de atención.\n• Integración de agentes de IA para respuestas naturales y contextuales.\n• Optimización de la experiencia del usuario (CX) en el canal de contacto.",
+  image: "chatbotFurnarius.jpg", 
+},
+{
+  id: "chatbot-llm-oracle",
+  title: "Arquitectura de Chatbot con Lógica de Datos Asíncrona",
+  problem: "Dificultad de los sistemas tradicionales para gestionar consultas complejas que requieren tiempos de procesamiento variables sin bloquear la experiencia del usuario.",
+  solution: "Desarrollo de un motor de consultas inteligente que conecta con LLMs de última generación. Implementa nodos de espera y división de datos para garantizar respuestas precisas y fluidas en cualquier volumen de demanda.",
+  stack: ["n8n", "LLM Integration", "Advanced Logic Nodes", "JSON Manipulation"],
+  contribution: "• Desarrollo de una interfaz de comunicación fluida con agentes de IA.\n• Implementación de lógica de 'Split Out' para descomponer consultas complejas en tareas procesables.\n• Gestión de latencia mediante nodos de espera controlada para estabilidad total.\n• Arquitectura certificada bajo estándares de Oracle Next Education.",
+  image: "conexionLLMS.jpg",
+},
+{
+  id: "patitas-felices-grooming-web-app",
+
+  title: "Plataforma Web de Grooming con Sistema de Turnos e Integración WhatsApp",
+
+  problem:
+    "Las peluquerías caninas suelen gestionar turnos manualmente por WhatsApp o teléfono, lo que genera pérdida de información, consultas incompletas y procesos operativos ineficientes. Además, muchas carecen de una presencia digital profesional que transmita confianza y permita mostrar resultados de forma clara para atraer nuevos clientes.",
+
+  solution:
+    "Aplicación web profesional desarrollada en React + TypeScript que digitaliza el proceso de reserva de turnos mediante un sistema estructurado de captura de datos de la mascota y generación automática de mensajes para WhatsApp. Incluye galería interactiva de transformaciones, diseño optimizado para conversión y arquitectura modular orientada a escalabilidad y experiencia de usuario.",
+
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion","Shadcn/UI", "Radix UI", "WhatsApp Deep Linking", "Responsive Design", "Component Architecture"],
+
+  contribution:
+    "• Desarrollo completo de la aplicación frontend utilizando React + TypeScript con arquitectura basada en componentes reutilizables\n" +
+    "• Implementación de sistema de reserva inteligente con captura estructurada de datos de la mascota (raza, peso, estado de salud, comportamiento)\n" +
+    "• Integración con WhatsApp mediante generación automática de mensajes formateados para facilitar la conversión de clientes\n" +
+    "• Desarrollo de galería interactiva 'Antes y Después' con lógica dinámica para mejorar la visualización de resultados\n" +
+    "• Implementación de interfaz responsive mobile-first optimizada para dispositivos móviles\n" +
+    "• Uso de Framer Motion y CSS transitions para animaciones avanzadas y mejora de experiencia de usuario\n" +
+    "• Construcción de sistema de diseño consistente utilizando Tailwind y componentes Shadcn/UI\n" +
+    "• Optimización de performance utilizando Vite como bundler\n" +
+    "• Deployment completo en Vercel con integración continua desde GitHub",
+
+  metrics:
+    "📱 Diseño 100% responsive | ⚡ Optimización de carga con Vite | 📅 Digitalización del proceso de reservas | 🔗 Integración directa con canal de ventas",
+
+  image: "patitasFelices.jpg",
+
+  repoUrl: "https://github.com/MafeTech24/patitasFelices",
+
+  liveUrl: "https://patitasfelices-spa.vercel.app/"
+
+  // loom: agregar demo después
+},
+{
   id: "emily-hair-studio-web-app",
   title: "Plataforma Web con Diagnóstico Inteligente e Integración WhatsApp",
   problem:
@@ -228,7 +319,7 @@ export const projects: Project[] = [
 
   // loom: agregar demo después
 },
-  {
+{
   id: "document-processing-ai-pipeline",
   title: "Automatización de Procesamiento de Documentos con IA",
   problem: "El procesamiento manual de facturas y documentos administrativos consume horas de trabajo, genera errores humanos en la extracción de datos, y carece de trazabilidad. Las empresas necesitan procesar grandes volúmenes de documentos (facturas, recibos, contratos) de forma rápida, precisa y auditable.",
@@ -259,26 +350,8 @@ export const projects: Project[] = [
   image: "7.flujoExitoso.jpg",
   repoUrl: "https://github.com/MafeTech24/n8n-procesamientoDocsEnd2End",
   // loom: "https://loom.com/share/tu-video-id", // Agregar después de grabar demo
-},
-  {
-  id: "chatbot-furnarius",
-  title: "Asistente Inteligente de CX",
-  problem: "Falta de respuesta inmediata a consultas complejas de ambientación y mobiliario, afectando la conversión de clientes potenciales.",
-  solution: "Flujo de IA conversacional que procesa entradas de audio y texto, automatizando la calificación de leads y la respuesta personalizada mediante modelos de lenguaje avanzados.",
-  stack: ["n8n", "Webhooks", "IA / LLM", "HTTP Request", "WhatsApp API"],
-  contribution: "• Diseño de flujo lógico para el procesamiento de archivos de audio.\n• Implementación de nodos de decisión (Switch) para rutas de atención.\n• Integración de agentes de IA para respuestas naturales y contextuales.\n• Optimización de la experiencia del usuario (CX) en el canal de contacto.",
-  image: "chatbotFurnarius.jpg", 
-  },  
+},  
 {
-  id: "chatbot-llm-oracle",
-  title: "Arquitectura de Chatbot con Lógica de Datos Asíncrona",
-  problem: "Dificultad de los sistemas tradicionales para gestionar consultas complejas que requieren tiempos de procesamiento variables sin bloquear la experiencia del usuario.",
-  solution: "Desarrollo de un motor de consultas inteligente que conecta con LLMs de última generación. Implementa nodos de espera y división de datos para garantizar respuestas precisas y fluidas en cualquier volumen de demanda.",
-  stack: ["n8n", "LLM Integration", "Advanced Logic Nodes", "JSON Manipulation"],
-  contribution: "• Desarrollo de una interfaz de comunicación fluida con agentes de IA.\n• Implementación de lógica de 'Split Out' para descomponer consultas complejas en tareas procesables.\n• Gestión de latencia mediante nodos de espera controlada para estabilidad total.\n• Arquitectura certificada bajo estándares de Oracle Next Education.",
-  image: "conexionLLMS.jpg",
-},
-  {
   id: "furnariusEventos",
   title: "Furnarius Eventos — Sitio web institucional (Cliente real- Maqueta)",
   problem: "Empresa del rubro eventos sin presencia digital profesional, lo que limitaba su visibilidad, comunicación de servicios y captación de nuevos clientes.",
@@ -288,8 +361,8 @@ export const projects: Project[] = [
   liveUrl: "https://furnarius-eventos.vercel.app/",
   //repoUrl: "https://github.com/MafeTech24/furnariusEventos",
   image: "furnarius.jpg",
-  },
-  {
+},
+{
   id: "elReydelNorte",
   title: "El Rey del Norte — Catálogo Digital Estratégico",
   problem: "Falta de un canal centralizado para exhibir stock, lo que generaba procesos de venta lentos y una imagen de marca informal frente a la competencia.",  
@@ -299,8 +372,8 @@ export const projects: Project[] = [
   liveUrl: "https://elreydelnorte-2.vercel.app/",
   //repoUrl: "https://github.com/ProyectosVibeCoding/elreydelnorte2",
   image: "elReyNorte.jpg",
-  },
-  {
+},
+{
   id: "artesaniaVeta",
   title: "Artesanía & Veta — E-commerce de Lujo con IA Integrada",
   problem: "Necesidad de transformar un catálogo estático en una experiencia de compra premium y personalizada que incluya herramientas de asistencia inteligente.",
@@ -311,7 +384,7 @@ export const projects: Project[] = [
   //repoUrl: "https://github.com/ProyectosVibeCoding/artesaniaMadera",
   image: "artesani&beta.jpg",
 },
-  {
+{
   id: "pixelymoda",
   title: "Pixel&Moda — E-commerce (Proyecto Final React))",
   problem: "Proyecto académico que requería migrar un e-commerce a React, aplicando buenas prácticas de desarrollo frontend y una arquitectura escalable.",
@@ -321,7 +394,7 @@ export const projects: Project[] = [
   liveUrl: "https://pixelymoda.vercel.app/",
   //repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
   image: "logoPyM.jpg",
-  },
+},
 {
   id: "n8n-reuniones",
   title: "Sistema de Actas e Insights con IA (Google Workspace)",
@@ -332,7 +405,7 @@ export const projects: Project[] = [
   //repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
   image: "n8n-workflow.jpg",
 },  
-  {
+{
     id: "cristianmartinez",
     title: "Sitio Web Profesional – Abogado Cristian Martínez",
     problem: "El cliente necesitaba presencia web profesional para captar clientes.",
@@ -341,8 +414,8 @@ export const projects: Project[] = [
     contribution: "Desarrollo completo, relevamiento de necesidades y publicación.",
     liveUrl: "https://cristianmartinez-abogado.vercel.app/",
     image: "cristianMartinez.png",
-  },
-  {
+},
+{
     id: "abyco",
     title: "AB&CO — Hub de Servicios Profesionales Integrales",
     problem: "Dispersión en la comunicación de servicios multidisciplinarios, lo que dificultaba que el cliente comprendiera la propuesta de valor integral del estudio.",
@@ -350,8 +423,8 @@ export const projects: Project[] = [
     stack: ["HTML", "CSS", "JavaScript", "bootstrap", "Github", "Vercel"],
     contribution: "• Definición de UX estratégica para segmentación de clientes.\n• Diseño de interfaz sobria y profesional acorde al sector corporativo.\n• Integración de formularios inteligentes para pre-calificación de prospectos.\n• Acompañamiento en la estrategia de comunicación y branding digital.",    liveUrl: "https://abyco-asesoriaintegral.vercel.app/index.html#",
     image: "abyco.jpg",
-  },
-  {
+},
+{
     id: "silviamariella",
     title: "Sitio Web – Silvia Mariella & José Tomás",
     problem: "Necesidad sitio web para eventos y proyecto personal.",
@@ -360,8 +433,8 @@ export const projects: Project[] = [
     contribution: "Diseño, desarrollo y deploy en Vercel.",
     liveUrl: "https://silviamariella-josetomas.vercel.app/",
     image: "silviayJose.jpg",
-  },      
-  {
+},      
+{
     id: "dulceybella",
     title: "Dulce y Bella - Distribuidora de Perfumes (Proyecto Final JS)",
     problem: "Proyecto académico: crear un e-commerce funcional con JS puro.",
@@ -371,7 +444,7 @@ export const projects: Project[] = [
     liveUrl: "https://dulceybellaperfumes.vercel.app/",
     //repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
     image: "dulceybella.jpg",
-  },  
+},  
   //{
     //id: "api-rest-1",
     //title: "API REST (Node/Express)",

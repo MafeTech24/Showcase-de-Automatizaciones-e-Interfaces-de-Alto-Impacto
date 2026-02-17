@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { navLinks, personalInfo } from "@/data/portfolio";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 
 const Header = () => {
