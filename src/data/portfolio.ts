@@ -195,7 +195,50 @@ export const experiences: Experience[] = [
 ];
 
 export const projects: Project[] = [ 
-  {
+{
+  id: "ai-email-document-intelligence-n8n",
+
+  title: "Sistema de Procesamiento Inteligente de Emails y Documentos con OCR e IA",
+
+  problem:
+    "Las empresas reciben documentos críticos como facturas y comprobantes a través de email, lo que requiere procesamiento manual, carga de datos y verificación constante. Este proceso es lento, propenso a errores humanos y limita la escalabilidad operativa, especialmente en entornos con alto volumen documental.",
+
+  solution:
+    "Desarrollo de una arquitectura de automatización utilizando n8n que monitorea emails entrantes en tiempo real, detecta adjuntos, extrae texto mediante OCR, analiza el contenido con inteligencia artificial y registra automáticamente los datos estructurados en Google Sheets, almacenando además los archivos originales en Google Drive. El sistema incluye manejo de errores, clasificación automática y trazabilidad completa.",
+
+  stack: [
+    "n8n",
+    "JavaScript",
+    "Gmail API",
+    "Google Sheets API",
+    "Google Drive API",
+    "OCR Integration",
+    "AI Integration",
+    "Workflow Automation",
+    "Document Intelligence"
+  ],
+
+  contribution:
+    "• Diseño e implementación de arquitectura completa de procesamiento documental automatizado\n" +
+    "• Integración con Gmail API para monitoreo automático de emails entrantes\n" +
+    "• Implementación de extracción de texto mediante OCR para documentos PDF e imágenes\n" +
+    "• Integración de modelo de inteligencia artificial para análisis y estructuración de datos\n" +
+    "• Desarrollo de lógica de clasificación automática de documentos mediante nodos Switch\n" +
+    "• Persistencia estructurada de datos en Google Sheets para auditoría y reporting\n" +
+    "• Implementación de almacenamiento automático de archivos originales en Google Drive\n" +
+    "• Desarrollo de manejo de errores y rutas de fallback para archivos inválidos o corruptos\n" +
+    "• Sanitización y estructuración del proyecto para deployment, reutilización y publicación en GitHub\n" +
+    "• Documentación profesional y preparación como sistema portfolio listo para producción",
+
+  image: "aiEmailProcessing.jpg",
+
+  repoUrl:
+    "https://github.com/MafeTech24/ai-email-document-processing-n8n",
+
+  // liveUrl: opcional si agregás demo
+},
+
+{
   id: "production-grade-error-handling-n8n",
 
   title: "Sistema de Manejo de Errores y Alertas en Tiempo Real para Automatizaciones",
