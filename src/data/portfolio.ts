@@ -236,7 +236,7 @@ export const projects: Project[] = [
   image: "aiEmailProcessing.jpg",
 
   repoUrl:
-    "https://github.com/MafeTech24/ai-email-document-intelligence-n8n",
+    "https://github.com/MafeTech24/ai-email-document-processing-n8n",
 },
 {
   id: "production-grade-error-handling-n8n",
@@ -314,7 +314,7 @@ export const projects: Project[] = [
   image: "7.flujoExitoso.jpg",
 
   repoUrl:
-    "https://github.com/MafeTech24/gemini-document-processing-pipeline",
+    "https://github.com/MafeTech24/n8n-procesamientoDocsEnd2End",
 },
 
 {
