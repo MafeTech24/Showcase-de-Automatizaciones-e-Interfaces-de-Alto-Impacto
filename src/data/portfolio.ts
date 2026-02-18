@@ -198,13 +198,13 @@ export const projects: Project[] = [
 {
   id: "ai-email-document-intelligence-n8n",
 
-  title: "Sistema de Procesamiento Inteligente de Emails y Documentos con OCR e IA",
+  title: "AI Document Intelligence Pipeline — Automatización End-to-End de Documentos desde Email con OCR e IA",
 
   problem:
-    "Las empresas reciben documentos críticos como facturas y comprobantes a través de email, lo que requiere procesamiento manual, carga de datos y verificación constante. Este proceso es lento, propenso a errores humanos y limita la escalabilidad operativa, especialmente en entornos con alto volumen documental.",
+    "El procesamiento manual de facturas y documentos administrativos consume tiempo, es propenso a errores y limita la escalabilidad operativa. Las empresas necesitan automatizar la captura, análisis y registro de documentos recibidos por email sin intervención humana.",
 
   solution:
-    "Desarrollo de una arquitectura de automatización utilizando n8n que monitorea emails entrantes en tiempo real, detecta adjuntos, extrae texto mediante OCR, analiza el contenido con inteligencia artificial y registra automáticamente los datos estructurados en Google Sheets, almacenando además los archivos originales en Google Drive. El sistema incluye manejo de errores, clasificación automática y trazabilidad completa.",
+    "Desarrollo de un pipeline de Document Intelligence utilizando n8n que monitorea emails entrantes en tiempo real, detecta adjuntos automáticamente, extrae texto mediante OCR, analiza el contenido con inteligencia artificial y registra los datos estructurados en Google Sheets, almacenando además los archivos originales en Google Drive. El sistema incluye clasificación automática, manejo de errores y trazabilidad completa para entornos productivos.",
 
   stack: [
     "n8n",
@@ -215,39 +215,39 @@ export const projects: Project[] = [
     "OCR Integration",
     "AI Integration",
     "Workflow Automation",
-    "Document Intelligence"
+    "Document Intelligence",
+    "Production Automation",
+    "Email Automation",
+    "API Integration"
   ],
 
   contribution:
-    "• Diseño e implementación de arquitectura completa de procesamiento documental automatizado\n" +
-    "• Integración con Gmail API para monitoreo automático de emails entrantes\n" +
-    "• Implementación de extracción de texto mediante OCR para documentos PDF e imágenes\n" +
-    "• Integración de modelo de inteligencia artificial para análisis y estructuración de datos\n" +
-    "• Desarrollo de lógica de clasificación automática de documentos mediante nodos Switch\n" +
-    "• Persistencia estructurada de datos en Google Sheets para auditoría y reporting\n" +
-    "• Implementación de almacenamiento automático de archivos originales en Google Drive\n" +
-    "• Desarrollo de manejo de errores y rutas de fallback para archivos inválidos o corruptos\n" +
-    "• Sanitización y estructuración del proyecto para deployment, reutilización y publicación en GitHub\n" +
-    "• Documentación profesional y preparación como sistema portfolio listo para producción",
+    "• Diseño e implementación de arquitectura completa de Document Intelligence automatizado\n" +
+    "• Integración con Gmail API para captura automática de documentos entrantes\n" +
+    "• Implementación de extracción de texto mediante OCR para PDF e imágenes\n" +
+    "• Integración de inteligencia artificial para análisis y estructuración de datos\n" +
+    "• Desarrollo de lógica de clasificación automática mediante nodos Switch\n" +
+    "• Persistencia estructurada de datos en Google Sheets para auditoría\n" +
+    "• Implementación de almacenamiento automático en Google Drive\n" +
+    "• Desarrollo de manejo de errores y fallback para archivos inválidos\n" +
+    "• Arquitectura reusable preparada para deployment en producción\n" +
+    "• Documentación profesional y publicación en GitHub",
 
   image: "aiEmailProcessing.jpg",
 
   repoUrl:
-    "https://github.com/MafeTech24/ai-email-document-processing-n8n",
-
-  // liveUrl: opcional si agregás demo
+    "https://github.com/MafeTech24/ai-email-document-intelligence-n8n",
 },
-
 {
   id: "production-grade-error-handling-n8n",
 
-  title: "Sistema de Manejo de Errores y Alertas en Tiempo Real para Automatizaciones",
+  title: "Sistema Global de Manejo de Errores y Alertas en Tiempo Real para Automatizaciones",
 
   problem:
-    "Las automatizaciones suelen fallar en silencio, generando pérdida de datos, interrupciones operativas y falta de visibilidad. Sin un sistema centralizado de monitoreo, los errores pueden pasar desapercibidos durante horas o días, afectando la confiabilidad de procesos críticos de negocio.",
+    "Las automatizaciones suelen fallar en silencio, generando pérdida de datos, interrupciones operativas y falta de visibilidad. Sin un sistema centralizado de monitoreo, los errores pueden pasar desapercibidos durante horas o días, afectando la confiabilidad de procesos críticos.",
 
   solution:
-    "Desarrollo de un sistema global de manejo de errores utilizando n8n que captura automáticamente cualquier fallo en los workflows, normaliza los datos del error, los registra en Google Sheets para auditoría persistente y envía alertas en tiempo real vía email. Esta arquitectura permite monitoreo continuo, trazabilidad completa y mejora significativa en la confiabilidad de automatizaciones productivas.",
+    "Desarrollo de un sistema global de manejo de errores utilizando n8n que captura automáticamente cualquier fallo en workflows, normaliza los datos del error, los registra en Google Sheets para auditoría persistente y envía alertas en tiempo real vía email. Esta arquitectura permite monitoreo continuo, trazabilidad completa y mayor confiabilidad en automatizaciones productivas.",
 
   stack: [
     "n8n",
@@ -256,26 +256,67 @@ export const projects: Project[] = [
     "Gmail API",
     "Workflow Automation",
     "Error Monitoring",
-    "Automation Architecture"
+    "Automation Architecture",
+    "Production Automation",
+    "Reliability Engineering",
+    "Observability"
   ],
 
   contribution:
-    "• Diseño e implementación de arquitectura global de manejo de errores reutilizable para cualquier workflow\n" +
+    "• Diseño e implementación de arquitectura global de manejo de errores reutilizable\n" +
     "• Implementación de Error Trigger para captura automática de fallos en tiempo real\n" +
-    "• Desarrollo de lógica de normalización de errores mediante nodo Code en JavaScript\n" +
-    "• Persistencia de logs en Google Sheets para auditoría y trazabilidad completa\n" +
-    "• Integración de sistema de alertas vía Gmail para notificación inmediata de incidentes\n" +
-    "• Configuración segura utilizando variables de entorno para protección de credenciales\n" +
-    "• Estructuración del proyecto para deployment y reutilización en entornos productivos\n" +
-    "• Documentación profesional y preparación del workflow como proyecto portfolio listo para producción",
+    "• Desarrollo de lógica de normalización de errores en JavaScript\n" +
+    "• Persistencia de logs en Google Sheets para auditoría completa\n" +
+    "• Integración de sistema de alertas automáticas vía Gmail\n" +
+    "• Configuración segura mediante variables de entorno\n" +
+    "• Arquitectura reusable para cualquier workflow\n" +
+    "• Documentación profesional y publicación en GitHub",
 
   image: "errorHandler.jpg",
 
   repoUrl:
     "https://github.com/MafeTech24/production-grade-error-handling-n8n",
-
-  // liveUrl: opcional si querés agregar demo visual
 },
+{
+  id: "gemini-document-processing-pipeline",
+
+  title: "Sistema Backend de Procesamiento Documental con Gemini AI, Supabase y Confidence Scoring",
+
+  problem:
+    "La recepción de documentos desde múltiples sistemas requiere validación, normalización y almacenamiento confiable. Sin un pipeline automatizado, los datos pueden perderse, duplicarse o procesarse incorrectamente.",
+
+  solution:
+    "Desarrollo de un pipeline backend utilizando n8n que recibe documentos vía webhook, extrae datos estructurados mediante Gemini AI, calcula un puntaje de confianza automático, registra los resultados en Supabase y genera dashboards en Google Sheets para monitoreo y auditoría en tiempo real.",
+
+  stack: [
+    "n8n",
+    "Gemini AI",
+    "Supabase",
+    "Google Sheets API",
+    "JavaScript",
+    "REST APIs",
+    "Confidence Scoring",
+    "Workflow Automation",
+    "Document Processing",
+    "Backend Architecture",
+    "API Integration"
+  ],
+
+  contribution:
+    "• Diseño de arquitectura backend API-First\n" +
+    "• Integración con Gemini AI para extracción inteligente de datos\n" +
+    "• Implementación de confidence scoring automático\n" +
+    "• Persistencia estructurada en Supabase\n" +
+    "• Desarrollo de lógica backend en JavaScript\n" +
+    "• Implementación de dashboards en Google Sheets\n" +
+    "• Pipeline reusable listo para producción",
+
+  image: "7.flujoExitoso.jpg",
+
+  repoUrl:
+    "https://github.com/MafeTech24/gemini-document-processing-pipeline",
+},
+
 {
   id: "chatbot-furnarius",
   title: "Asistente Inteligente de CX",
@@ -351,9 +392,6 @@ export const projects: Project[] = [
     "• Optimización de performance y estructura del proyecto utilizando Vite como build tool\n" +
     "• Deployment completo en Vercel con pipeline de integración continua desde GitHub",
 
-  metrics:
-    "📱 Aplicación 100% responsive | ⚡ Tiempo de carga optimizado con Vite | 🎯 Optimización orientada a conversión | 🔗 Integración directa con canal comercial",
-
   image: "emilyHair.jpg",
 
   repoUrl: "https://github.com/MafeTech24/emilyHair",
@@ -361,39 +399,7 @@ export const projects: Project[] = [
   liveUrl: "https://emilyhairstudio.vercel.app/"
 
   // loom: agregar demo después
-},
-{
-  id: "document-processing-ai-pipeline",
-  title: "Automatización de Procesamiento de Documentos con IA",
-  problem: "El procesamiento manual de facturas y documentos administrativos consume horas de trabajo, genera errores humanos en la extracción de datos, y carece de trazabilidad. Las empresas necesitan procesar grandes volúmenes de documentos (facturas, recibos, contratos) de forma rápida, precisa y auditable.",
-  solution: "Pipeline inteligente end-to-end que automatiza el ciclo completo: recepción vía webhook → normalización de entrada → deduplicación por hash → extracción de datos con Gemini AI → validación con scoring de confianza → persistencia en Supabase → logging dual en Google Sheets (auditoría + contenido para LinkedIn). Sistema event-driven con arquitectura modular y trazabilidad completa.",
-  stack: [
-    "n8n",
-    "Gemini AI 2.5 Flash",
-    "Supabase",
-    "Google Sheets API",
-    "JavaScript/Node.js",
-    "Webhooks",
-    "REST APIs",
-    "Hash-based Deduplication",
-    "OCR/Document AI"
-  ],
-  contribution: 
-    "• Diseño e implementación de arquitectura multi-capa: ingesta → normalización → deduplicación → extracción IA → scoring → persistencia → logging\n" +
-    "• Integración de Gemini AI para extracción inteligente de datos estructurados (número factura, fecha, proveedor, total, divisa) desde documentos no estructurados\n" +
-    "• Sistema de deduplicación basado en hash MD5 para prevenir procesamiento duplicado y optimizar recursos\n" +
-    "• Algoritmo de confidence scoring que evalúa completitud de datos y quality score de IA para determinar necesidad de revisión manual\n" +
-    "• Nodos Code personalizados para normalización de payloads heterogéneos desde múltiples fuentes (API, email, upload manual)\n" +
-    "• Persistencia dual: Supabase (base de datos principal) + Google Sheets (auditoría en tiempo real y dashboard ejecutivo)\n" +
-    "• Sistema de logging estructurado con tracking de: timestamp, datos extraídos, confianza, campos faltantes, status procesamiento\n" +
-    "• Generación automática de contenido para LinkedIn basado en métricas del procesamiento (tech showcase)\n" +
-    "• Manejo robusto de errores y validación de campos requeridos con identificación de missing fields\n" +
-    "• Arquitectura escalable preparada para agregar más tipos de documentos y fuentes de ingesta",
-  metrics: "⚡ Procesamiento automatizado en <10 segundos | 🎯 Precisión promedio >85% | 📊 Dashboard en tiempo real | 🔍 Auditoría completa de cada operación",
-  image: "7.flujoExitoso.jpg",
-  repoUrl: "https://github.com/MafeTech24/n8n-procesamientoDocsEnd2End",
-  // loom: "https://loom.com/share/tu-video-id", // Agregar después de grabar demo
-},  
+}, 
 {
   id: "furnariusEventos",
   title: "Furnarius Eventos — Sitio web institucional (Cliente real- Maqueta)",
