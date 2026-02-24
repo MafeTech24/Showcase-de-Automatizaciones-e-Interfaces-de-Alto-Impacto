@@ -36,19 +36,28 @@ export interface Experience {
 
 export const personalInfo = {
   name: "María Fernanda Moreno",
-  role: "AI Automation & Full Stack Builder | Desarrollo Web en Vibe Coding y Optimización de Procesos con IA",
-  subtitle: "Ayudo a empresas a escalar mediante el desarrollo de interfaces modernas y la integración estratégica de IA para automatizar tareas repetitivas.",
+  role: "Frontend Developer (React) & Automation Developer | n8n | AI",
+  subtitle: "Construyo interfaces modernas con React y sistemas de automatización con IA que transforman procesos manuales en soluciones automáticas, escalables y listas para producción.",
   initials: "MF",
 };
 
-export const aboutText = `Soy una desarrolladora enfocada en la intersección del código y la Inteligencia Artificial para crear soluciones que no solo se ven bien, sino que trabajan por vos. Mi enfoque principal es el Vibe Coding: utilizar la IA para acelerar el desarrollo y entregar productos de alta calidad en tiempos récord.\n
-¿Qué puedo aportar a tu proyecto?
 
-- Desarrollo Full Stack (MERN): Construyo interfaces modernas, rápidas y escalables con React y TypeScript, asegurando que cada componente esté optimizado para la mejor experiencia de usuario.
+export const aboutText = `Soy Automation Developer especializada en el desarrollo de sistemas backend impulsados por Inteligencia Artificial para automatizar procesos empresariales.
 
--  IA & Automatización de Procesos: Me especializo en diseñar flujos de trabajo inteligentes con n8n y Make, integrando herramientas como Google Workspace e IA para eliminar tareas repetitivas y reducir errores operativos.
+Diseño e implemento workflows con n8n, integrando APIs, Google Workspace y modelos de IA como Gemini para procesar documentos, eliminar tareas manuales y crear sistemas autónomos escalables.
 
-- Estrategia 360° (CX + Digital Marketing): Gracias a mi trayectoria en Customer Experience y formación en Marketing Digital y Social Media, no solo escribo código; diseño soluciones orientadas a la conversión y el posicionamiento. Identifico los puntos de dolor de tu negocio para crear productos técnicos que potencien tu presencia digital y mejoren la relación con tus clientes de forma medible.`;
+También desarrollo aplicaciones web modernas con React y TypeScript, lo que me permite construir soluciones completas: desde la automatización backend hasta las interfaces necesarias para visualización, operación y escalabilidad.
+
+Mi experiencia en Customer Experience y Marketing Digital me permite crear soluciones técnicas alineadas con necesidades reales de negocio, enfocadas en eficiencia operativa y experiencia de usuario.
+
+Actualmente me especializo en:
+
+• Workflow automation con n8n
+• Integración de APIs y sistemas
+• Document processing con IA
+• Desarrollo frontend con React y TypeScript
+• Backend automation workflows`;
+
 export const softSkills = [
   "Comunicación efectiva",
   "Trabajo en equipo",
@@ -196,6 +205,47 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [ 
 {
+  id: "leadflow-ai-n8n",
+
+  title: "LeadFlow AI — Pipeline de Clasificación Inteligente de Leads con n8n y Gemini AI",
+
+  problem:
+    "La clasificación manual de leads comerciales consume tiempo del equipo de ventas y genera demoras en el seguimiento de oportunidades urgentes. Sin automatización, los leads calientes pueden perderse entre decenas de consultas sin priorización.",
+
+  solution:
+    "Desarrollo de un pipeline de automatización utilizando n8n con arquitectura modular de sub-workflows que captura leads vía webhook, valida y normaliza el input, clasifica automáticamente cada consulta con Gemini AI asignando un score del 1 al 10 y categoría hot/warm/cold, persiste los resultados en Google Sheets para trazabilidad completa y envía alertas instantáneas por email cuando detecta un lead caliente.",
+
+  stack: [
+    "n8n",
+    "JavaScript",
+    "Gemini AI",
+    "Google Sheets API",
+    "Gmail API",
+    "Webhooks",
+    "REST APIs",
+    "Workflow Automation",
+    "Lead Classification",
+    "AI Integration",
+    "Modular Architecture",
+    "Production Automation"
+  ],
+
+  contribution:
+    "• Diseño de arquitectura modular con 3 sub-workflows reutilizables e independientes\n" +
+    "• Implementación de validación y normalización de input con detección de campos faltantes\n" +
+    "• Integración con Gemini 2.0 Flash para clasificación estructurada de leads con schema forzado\n" +
+    "• Desarrollo de lógica de parsing y limpieza de respuestas IA en JavaScript\n" +
+    "• Persistencia automática en Google Sheets con trazabilidad completa por execution_id\n" +
+    "• Sistema de alertas por Gmail para leads con categoría HOT\n" +
+    "• Pipeline probado end-to-end con datos reales en n8n Cloud\n" +
+    "• Documentación profesional con README, .env.example y setup en 5 minutos\n" +
+    "• Publicación en GitHub con workflows limpios sin credenciales expuestas",
+
+  image: "leadFlowAI.jpg",
+
+  repoUrl: "https://github.com/MafeTech24/LeadFlow-AI",
+},
+{
   id: "ai-email-document-intelligence-n8n",
 
   title: "AI Document Intelligence Pipeline — Automatización End-to-End de Documentos desde Email con OCR e IA",
@@ -316,7 +366,6 @@ export const projects: Project[] = [
   repoUrl:
     "https://github.com/MafeTech24/n8n-procesamientoDocsEnd2End",
 },
-
 {
   id: "chatbot-furnarius",
   title: "Asistente Inteligente de CX",
