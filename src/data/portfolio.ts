@@ -13,6 +13,8 @@ export interface Project {
   images?: string[];
   isPlaceholder?: boolean;
   metrics?: string;
+  isFeatured?: boolean;
+  documentUrl?: string;
 }
 
 export interface Skill {
@@ -203,7 +205,68 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const projects: Project[] = [ 
+export const projects: Project[] = [
+{
+  id: "analisis-sentimientos-gemini",
+  title: "Sistema de Análisis de Sentimientos de Tweets con n8n y Gemini",
+  problem: "Las empresas necesitan monitorear en tiempo real el tono de las menciones en redes sociales, pero el análisis manual es lento y no escala.",
+  solution: "Pipeline de automatización en n8n que captura tweets vía webhook, los clasifica por sentimiento (positivo, negativo, neutro) usando Gemini AI y genera reportes estructurados automáticamente. Implementado en instancia Docker local.",
+  stack: ["n8n", "Gemini AI", "JavaScript", "Docker", "Webhooks", "JSON", "GitHub"],
+  contribution: "• Diseño e implementación del pipeline completo en n8n\n• Integración con Gemini AI para clasificación de sentimientos\n• Configuración de instancia n8n self-hosted en Docker\n• Debugging de integración Gemini (token requirements, JSON parsing)\n• Documentación técnica y publicación en GitHub\n• Proyecto final de la Carrera AI Automation — Coderhouse",
+  repoUrl: "https://github.com/MafeTech24/ProyectoFinalCoder-AnalisisSentimientosTweetsGemini",
+  image: "sentimientosGemini.jpg",
+},
+{
+  id: "triage-hospitalario-hitl",
+  isFeatured: true,
+  title: "Sistema de Triage Automático de Derivaciones Hospitalarias con IA y Human-in-the-Loop",
+  problem: "En hospitales argentinos, la clasificación manual de derivaciones médicas entrantes toma entre 48 y 72 horas, genera errores de clasificación, sobrecarga de especialidades y falta de trazabilidad para auditorías regulatorias.",
+  solution: "Sistema de automatización avanzado que recibe derivaciones desde múltiples canales (HIS/EHR vía FHIR, PDFs, WhatsApp), las procesa de forma multimodal (texto + imágenes RX/TC), consulta guías clínicas actualizadas mediante RAG sobre base vectorial, genera clasificación con score de confianza y escala los casos ambiguos a revisión médica humana. Ciclo de auto-mejora continua basado en feedback de médicos revisores.",
+  stack: ["n8n (self-hosted Docker)", "Gemini 2.5 Flash", "Gemini 2.5 Pro", "Supabase pgvector", "RAG", "LlamaCloud", "NotebookLM", "Retool (HITL)", "Grafana + Loki", "FHIR R4", "JavaScript", "Docker Compose"],
+  contribution: "• Diseño de arquitectura multimodal con 5 capas: ingesta, orquestación n8n, RAG vectorial, HITL y observabilidad\n• Implementación de pipeline RAG con indexación offline (batch semanal) y consulta online (<3s p95)\n• Integración multimodal texto + imagen (RX/TC) con Gemini 2.5 Flash\n• Sistema HITL en Retool con criterios de escalación explícitos y SLA diferenciado por urgencia\n• Pipeline de evaluación automática semanal con métricas accuracy y F1, y ciclo de auto-mejora de prompts\n• Fallbacks y políticas de espera por componente para operación resiliente\n• Observabilidad completa con logs estructurados JSON, Grafana + Loki y alertas PagerDuty\n• Anonimización de datos clínicos cumpliendo Ley 25.326 (datos sensibles de salud)\n• Documentación técnica profesional de 15 páginas con diagramas de arquitectura\n• Proyecto Final Integrador — AI Automation Avanzado, Coderhouse",
+  documentUrl: "https://docs.google.com/document/d/1glkRixnXd3rUrWGr4Au9xSsqLFpNz2D3kgqsVnKby4U/edit?usp=sharing",
+  image: "triageHospitalario.jpg",
+},
+{
+  id: "tonio-minimarket",
+  title: "Tonio MiniMarket — E-commerce con Checkout Inteligente y Delivery con Geolocalización",
+  problem: "Despensa y pollería del barrio sin presencia digital, con pedidos gestionados por WhatsApp manualmente. Necesitaban un canal de ventas online accesible para adultos mayores y clientes del barrio.",
+  solution: "Aplicación web de minimarket con catálogo de 60+ productos en 7 categorías, checkout en 3 pasos, cálculo automático de costo de delivery por distancia usando Haversine + OpenStreetMap Nominatim, pago en efectivo/transferencia, envío dual por WhatsApp al negocio y al cliente, comprobante de pedido en /comprobante/:numeroPedido y persistencia completa en Supabase.",
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "WhatsApp Deep Linking", "OpenStreetMap Nominatim", "Haversine", "html2canvas", "Vercel"],
+  contribution: "• Desarrollo completo del catálogo con 60+ productos y sistema de ofertas con carrusel de imágenes\n• Implementación de checkout en 3 pasos con formulario de cliente y toggle delivery/retiro\n• Cálculo de costo de delivery en tiempo real usando algoritmo Haversine y geocoding con Nominatim\n• Integración con Supabase para persistencia de pedidos (tabla pedidos)\n• Generación de ticket en html2canvas y dispatch dual por WhatsApp (negocio + cliente)\n• Página de comprobante /comprobante/:numeroPedido con vercel.json rewrites\n• UX optimizada para adultos mayores y usuarios con poca experiencia digital\n• Deploy en Vercel con integración continua desde GitHub",
+  liveUrl: "https://toniominimarketnew.vercel.app/",
+  image: "tonioMiniMarket.jpg",
+},  
+{
+  id: "arquetipo-ia",
+  title: "ArquetipoIA — Generador de Buyer Personas con Gemini AI",
+  problem: "Freelancers y agencias de LATAM pierden tiempo construyendo buyer personas manualmente, sin una herramienta accesible, en español y adaptada a la realidad del mercado regional.",
+  solution: "Aplicación web con modelo freemium que genera buyer personas detallados a partir de datos del negocio del usuario, impulsada por Gemini AI. Incluye analítica con PostHog, arquitectura escalable en Supabase y deploy en Vercel.",
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Gemini AI", "Supabase", "PostHog", "Vercel"],
+  contribution: "• Diseño e implementación completa de la aplicación frontend\n• Integración con Gemini AI para generación estructurada de buyer personas\n• Implementación de modelo freemium con límites por usuario\n• Analytics con PostHog para tracking de uso y conversión\n• Persistencia de datos en Supabase\n• Deploy en Vercel con dominio personalizado\n• Proyecto final del curso 'Creación de Productos desde Cero con IA' — Coderhouse",
+  liveUrl: "https://arquetipo-ia-entrega-final.vercel.app/",
+  image: "arquetipoIA.jpg",
+},  
+{
+  id: "pretty-lady-boutique",
+  title: "Pretty Lady Boutique — E-commerce Premium con Personal Shopper IA",
+  problem: "Necesidad de demostrar una experiencia e-commerce de moda femenina premium con asistencia inteligente integrada, diferenciada por diseño sofisticado y funcionalidad real.",
+  solution: "E-commerce full desarrollado desde cero con estética glassmorphism, chatbot personal shopper integrado con Gemini 2.5 Flash que conoce el inventario real en Supabase, carrito completo con variantes de talla y color, checkout simulado y dashboard de productos en tiempo real.",
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Shadcn/UI", "Framer Motion", "Supabase", "Gemini 2.5 Flash", "Google AI Studio", "React Query", "Vercel"],
+  contribution: "• Desarrollo completo del frontend con arquitectura de componentes reutilizables\n• Integración de chatbot Personal Shopper con Gemini 2.5 Flash conectado al inventario real de Supabase\n• Implementación de carrito con gestión de variantes (talla/color) y persistencia\n• Diseño premium con glassmorphism, animaciones Framer Motion y paleta curada\n• Gestión de inventario en tiempo real con Supabase PostgreSQL\n• Checkout simulado con formularios de envío y pago\n• Diseño 100% responsive mobile-first\n• Deploy en Vercel con pipeline de CI desde GitHub",
+  liveUrl: "https://pretty-lady-boutique.vercel.app/",
+  image: "bannerPrettyLady.jpg",
+},   
+{
+  id: "amoblamientos-rey-norte",
+  title: "Amoblamientos El Rey del Norte — Catálogo Digital con IA y WhatsApp",
+  problem: "Mueblería artesanal de Córdoba sin presencia digital, con catálogo disperso y sin canal centralizado para mostrar productos a medida ni captar consultas de nuevos clientes.",
+  solution: "Landing page premium con catálogo filtrable por categoría (Cocinas, Baño, Dormitorio, Living, Almacenaje, Exterior), detalle individual de cada producto con materiales y dimensiones, integración directa con WhatsApp y Google Maps. Diseño orientado a transmitir la calidad artesanal del negocio.",
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "WhatsApp Deep Linking", "Google Maps", "Vercel", "Lovable (IA)"],
+  contribution: "• Relevamiento del negocio y catalogación completa de productos desde imágenes\n• Diseño de arquitectura de catálogo filtrable por categoría\n• Integración de WhatsApp flotante para consultas directas\n• Embed de Google Maps para localización del local\n• Optimización mobile-first para clientes que navegan desde celular\n• Deploy en Vercel con integración continua",
+  liveUrl: "https://amoblamientoselreydelnorte.vercel.app/",
+  image: "amoblamientosElReyNorte.jpg",
+},  
 {
   id: "leadflow-ai-n8n",
 
