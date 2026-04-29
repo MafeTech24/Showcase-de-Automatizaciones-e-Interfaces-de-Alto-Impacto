@@ -213,7 +213,7 @@ export const projects: Project[] = [
   solution: "Pipeline de automatización en n8n que captura tweets vía webhook, los clasifica por sentimiento (positivo, negativo, neutro) usando Gemini AI y genera reportes estructurados automáticamente. Implementado en instancia Docker local.",
   stack: ["n8n", "Gemini AI", "JavaScript", "Docker", "Webhooks", "JSON", "GitHub"],
   contribution: "• Diseño e implementación del pipeline completo en n8n\n• Integración con Gemini AI para clasificación de sentimientos\n• Configuración de instancia n8n self-hosted en Docker\n• Debugging de integración Gemini (token requirements, JSON parsing)\n• Documentación técnica y publicación en GitHub\n• Proyecto final de la Carrera AI Automation — Coderhouse",
-  repoUrl: "https://github.com/MafeTech24/ProyectoFinalCoder-AnalisisSentimientosTweetsGemini",
+  //repoUrl: "https://github.com/MafeTech24/ProyectoFinalCoder-AnalisisSentimientosTweetsGemini",
   image: "sentimientosGemini.jpg",
 },
 {
