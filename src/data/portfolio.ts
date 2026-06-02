@@ -228,6 +228,16 @@ export const projects: Project[] = [
   image: "triageHospitalario.jpg",
 },
 {
+  id: "dashboard-transacciones-fintech",
+  title: "Dashboard de Transacciones Fintech con Looker Studio",
+  problem: "Las fintech necesitan visibilidad en tiempo real sobre el volumen, el estado y la distribución de sus transacciones, pero los datos crudos en planillas no permiten detectar patrones, tasas de aprobación ni mercados clave de un vistazo.",
+  solution: "Dashboard interactivo de Business Intelligence construido en Looker Studio, conectado de forma nativa a Google Sheets como fuente de datos. Presenta el monto total transaccionado, la evolución temporal diaria, la distribución por estado (aprobada, pendiente, rechazada), el monto por método de pago y el ranking de volumen por país, con un filtro de período interactivo que permite al usuario explorar cualquier rango de fechas en vivo.",
+  stack: ["Looker Studio", "Google Sheets", "Visualización de datos", "Business Intelligence", "Análisis de datos"],
+  contribution: "• Modelado y estructuración de los datos de transacciones en Google Sheets (fecha, tipo, método, monto, estado, país)\n• Conexión nativa de la fuente de datos a Looker Studio\n• Diseño de 5 visualizaciones complementarias: scorecard de monto total, serie temporal de evolución diaria, gráfico circular de distribución por estado, gráfico de barras por método de pago y tabla de ranking por país\n• Configuración de formato de moneda y tipado correcto de campos (fecha y métrica numérica)\n• Implementación de filtro de período interactivo para exploración dinámica de los datos\n• Publicación del informe con acceso por enlace para visualización sin autenticación",
+  liveUrl: "https://datastudio.google.com/reporting/445bcfb7-7d07-4572-a5d4-98d9fd1881ca/page/9G4zF",
+  image: "dashboardTransaccionesFintech.jpg",
+},
+{
   id: "tonio-minimarket",
   title: "Tonio MiniMarket — E-commerce con Checkout Inteligente y Delivery con Geolocalización",
   problem: "Despensa y pollería del barrio sin presencia digital, con pedidos gestionados por WhatsApp manualmente. Necesitaban un canal de ventas online accesible para adultos mayores y clientes del barrio.",
