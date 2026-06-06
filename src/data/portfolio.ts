@@ -240,11 +240,11 @@ export const projects: Project[] = [
 {
   id: "tonio-minimarket",
   title: "Tonio MiniMarket — E-commerce con Checkout Inteligente y Delivery con Geolocalización",
-  problem: "Despensa y pollería del barrio sin presencia digital, con pedidos gestionados por WhatsApp manualmente. Necesitaban un canal de ventas online accesible para adultos mayores y clientes del barrio.",
-  solution: "Aplicación web de minimarket con catálogo de 60+ productos en 7 categorías, checkout en 3 pasos, cálculo automático de costo de delivery por distancia usando Haversine + OpenStreetMap Nominatim, pago en efectivo/transferencia, envío dual por WhatsApp al negocio y al cliente, comprobante de pedido en /comprobante/:numeroPedido y persistencia completa en Supabase.",
+  problem: "Despensa y pollería sin presencia digital, con pedidos gestionados por WhatsApp manualmente. Necesitaban un canal de ventas online accesible para todos sus clientes.",
+  solution: "Aplicación web de minimarket con catálogo de 460+ productos en 7 categorías, checkout en 3 pasos, cálculo automático de costo de delivery por distancia usando Haversine + OpenStreetMap Nominatim, pago en efectivo/transferencia, envío dual por WhatsApp al negocio y al cliente, comprobante de pedido en /comprobante/:numeroPedido y persistencia completa en Supabase.",
   stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "WhatsApp Deep Linking", "OpenStreetMap Nominatim", "Haversine", "html2canvas", "Vercel"],
-  contribution: "• Desarrollo completo del catálogo con 60+ productos y sistema de ofertas con carrusel de imágenes\n• Implementación de checkout en 3 pasos con formulario de cliente y toggle delivery/retiro\n• Cálculo de costo de delivery en tiempo real usando algoritmo Haversine y geocoding con Nominatim\n• Integración con Supabase para persistencia de pedidos (tabla pedidos)\n• Generación de ticket en html2canvas y dispatch dual por WhatsApp (negocio + cliente)\n• Página de comprobante /comprobante/:numeroPedido con vercel.json rewrites\n• UX optimizada para adultos mayores y usuarios con poca experiencia digital\n• Deploy en Vercel con integración continua desde GitHub",
-  liveUrl: "https://toniominimarketnew.vercel.app/",
+  contribution: "• Desarrollo completo del catálogo con 460+ productos y sistema de ofertas con carrusel de imágenes\n• Implementación de checkout en 3 pasos con formulario de cliente y toggle delivery/retiro\n• Cálculo de costo de delivery en tiempo real usando algoritmo Haversine y geocoding con Nominatim\n• Integración con Supabase para persistencia de pedidos (tabla pedidos)\n• Generación de ticket en html2canvas y dispatch dual por WhatsApp (negocio + cliente)\n• Página de comprobante /comprobante/:numeroPedido con vercel.json rewrites\n• UX optimizada para adultos mayores y usuarios con poca experiencia digital\n• Deploy en Vercel con integración continua desde GitHub",
+  liveUrl: "https://toniominimarket.com.ar",
   image: "tonioMiniMarket.jpg",
 },  
 {
