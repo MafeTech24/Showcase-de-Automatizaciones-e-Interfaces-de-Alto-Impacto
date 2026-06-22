@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatización Integral — Plataforma Académica · MafeTech</title>
+<style>
+  :root{
+    --bg:#11131c;
+    --surface:#1a1d2c;
+    --surface-2:#222640;
+    --border:rgba(255,255,255,0.09);
+    --text:#efeae2;
+    --text-dim:#8d92a8;
+    --teal:#4ddbc4;
+    --teal-dim:rgba(77,219,196,0.14);
+    --coral:#ff7a5c;
+    --coral-dim:rgba(255,122,92,0.14);
+    --gold:#e7b65c;
+    --gold-dim:rgba(231,182,92,0.14);
+    --serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --sans: -apple-system,"Segoe UI",Inter,Roboto,sans-serif;
+    --mono: "SF Mono","JetBrains Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:radial-gradient(circle at 18% 0%, #181c2e 0%, var(--bg) 55%);
+    color:var(--text);
+    font-family:var(--sans);
+    min-height:100vh;
+    padding:0 0 64px;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px;}
+
+  /* header */
+  header{padding:40px 0 28px;border-bottom:1px solid var(--border);}
+  .brandrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);}
+  .role-tag{font-family:var(--mono);font-size:11px;color:var(--text-dim);border:1px solid var(--border);padding:6px 10px;border-radius:20px;white-space:nowrap;}
+  h1{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.18;margin:18px 0 10px;letter-spacing:-0.01em;}
+  h1 em{color:var(--teal);font-style:normal;}
+  .sub{color:var(--text-dim);font-size:15px;max-width:560px;line-height:1.5;margin:0;}
+
+  /* tabs */
+  .tabs{display:flex;gap:6px;margin:28px 0 0;}
+  .tab-btn{
+    font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text-dim);
+    background:transparent;border:1px solid var(--border);padding:10px 18px;border-radius:10px;
+    cursor:pointer;transition:all .2s ease;
+  }
+  .tab-btn.active{background:var(--surface-2);color:var(--text);border-color:rgba(77,219,196,0.4);}
+  .tab-btn:hover{color:var(--text);}
+
+  section.view{display:none;padding-top:40px;}
+  section.view.active{display:block;animation:fadein .35s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  .view-title{font-family:var(--serif);font-size:22px;margin:0 0 6px;}
+  .view-desc{color:var(--text-dim);font-size:14px;margin:0 0 36px;max-width:560px;line-height:1.5;}
+
+  /* ===== ARQUITECTURA ===== */
+  .pipeline{position:relative;padding-left:46px;}
+  .pipeline-line{position:absolute;left:14px;top:10px;bottom:10px;width:2px;background:var(--border);overflow:hidden;}
+  .pulse{position:absolute;left:-3px;width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px 2px var(--teal);animation:travel 4.5s linear infinite;}
+  @keyframes travel{0%{top:-8px;opacity:0;}8%{opacity:1;}92%{opacity:1;}100%{top:100%;opacity:0;}}
+
+  .stop{position:relative;margin-bottom:30px;}
+  .stop:last-child{margin-bottom:0;}
+  .dot{position:absolute;left:-46px;top:6px;width:30px;height:30px;border-radius:50%;background:var(--surface);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--text-dim);}
+  .stop.t1 .dot{border-color:var(--teal);color:var(--teal);}
+  .stop.t2 .dot{border-color:var(--gold);color:var(--gold);}
+  .stop.t3 .dot{border-color:var(--coral);color:var(--coral);}
+  .stop.t4 .dot{border-color:#9b8cff;color:#9b8cff;}
+
+  .stop-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;}
+  .stop-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;}
+  .stop-title{font-family:var(--serif);font-size:19px;margin:0 0 8px;}
+  .stop-desc{font-size:13.5px;color:var(--text-dim);line-height:1.55;margin:0 0 14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:6px;border:1px solid var(--border);color:var(--text-dim);}
+  .stop.t1 .chip.hi{background:var(--teal-dim);border-color:rgba(77,219,196,.3);color:var(--teal);}
+  .stop.t2 .chip.hi{background:var(--gold-dim);border-color:rgba(231,182,92,.3);color:var(--gold);}
+  .stop.t3 .chip.hi{background:var(--coral-dim);border-color:rgba(255,122,92,.3);color:var(--coral);}
+  .stop.t4 .chip.hi{background:rgba(155,140,255,.14);border-color:rgba(155,140,255,.3);color:#9b8cff;}
+
+  .footnote{margin-top:38px;font-size:12px;color:var(--text-dim);border-top:1px solid var(--border);padding-top:16px;}
+
+  /* ===== DEMO ===== */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:760px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;}
+  .card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:10px;}
+  .card-title{font-family:var(--serif);font-size:17px;margin:0;}
+  .card-flag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:5px;white-space:nowrap;}
+  .flag-teal{background:var(--teal-dim);color:var(--teal);}
+  .flag-gold{background:var(--gold-dim);color:var(--gold);}
+  .flag-coral{background:var(--coral-dim);color:var(--coral);}
+  .flag-purple{background:rgba(155,140,255,.14);color:#9b8cff;}
+  .card-body{flex:1;}
+  .btn{
+    font-family:var(--sans);font-size:13px;font-weight:600;color:var(--bg);background:var(--teal);
+    border:none;padding:10px 14px;border-radius:9px;cursor:pointer;transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);opacity:.92;}
+  .btn:active{transform:translateY(0);}
+  .btn-ghost{background:transparent;color:var(--text-dim);border:1px solid var(--border);}
+
+  /* lead module */
+  .lead-queue{margin-top:12px;display:flex;flex-direction:column;gap:8px;min-height:40px;}
+  .lead-item{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:8px 10px;font-size:12.5px;animation:slidein .35s ease;}
+  @keyframes slidein{from{opacity:0;transform:translateX(-6px);}to{opacity:1;transform:translateX(0);}}
+  .lead-name{color:var(--text);font-weight:600;}
+  .lead-meta{color:var(--text-dim);font-size:11.5px;}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:5px;}
+  .badge-alta{background:var(--coral-dim);color:var(--coral);}
+  .badge-media{background:var(--gold-dim);color:var(--gold);}
+  .badge-routed{background:var(--teal-dim);color:var(--teal);margin-left:6px;}
+
+  /* chat module */
+  .chat-window{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:150px;display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .bubble{max-width:84%;font-size:12.5px;line-height:1.45;padding:8px 11px;border-radius:10px;animation:slidein .3s ease;}
+  .bubble.user{align-self:flex-end;background:var(--teal);color:var(--bg);font-weight:600;}
+  .bubble.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--border);color:var(--text);}
+  .bubble.bot .tag{display:block;font-family:var(--mono);font-size:9.5px;color:var(--text-dim);margin-bottom:3px;}
+  .quick-q{display:flex;flex-wrap:wrap;gap:6px;}
+  .qbtn{font-size:11.5px;background:transparent;border:1px solid var(--border);color:var(--text-dim);padding:6px 10px;border-radius:16px;cursor:pointer;}
+  .qbtn:hover{color:var(--text);border-color:var(--teal);}
+
+  /* checklist module */
+  .checklist{margin-top:12px;display:flex;flex-direction:column;gap:10px;min-height:40px;}
+  .check-step{display:flex;align-items:center;gap:10px;font-size:13px;opacity:0;animation:popin .3s ease forwards;}
+  @keyframes popin{from{opacity:0;transform:translateX(-4px);}to{opacity:1;transform:translateX(0);}}
+  .check-circle{width:18px;height:18px;border-radius:50%;background:var(--teal);color:var(--bg);font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .check-label{color:var(--text);}
+  .check-time{font-family:var(--mono);font-size:10.5px;color:var(--text-dim);margin-left:auto;}
+
+  /* alerts module */
+  .alert-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+  .alert-item{display:flex;justify-content:space-between;align-items:center;background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:9px 11px;font-size:12.5px;}
+  .alert-days{font-family:var(--mono);font-size:11px;color:var(--coral);}
+  .report-box{margin-top:10px;font-size:12px;color:var(--text-dim);background:var(--surface-2);border:1px dashed var(--border);border-radius:9px;padding:10px;display:none;line-height:1.5;}
+  .report-box.show{display:block;animation:slidein .3s ease;}
+
+  .small-tools{margin-top:14px;font-family:var(--mono);font-size:10.5px;color:var(--text-dim);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brandrow">
+      <span class="brand">MafeTech · Automatización</span>
+      <span class="role-tag">Asistente de Automatización IA</span>
+    </div>
+    <h1><em>"Automatización Academia de Idiomas con Make (Propuesta Técnica)"</em></h1>
+    <p class="sub">Cuatro automatizaciones conectadas entre sí: desde que alguien ve un anuncio hasta que tiene acceso al curso, sin que nadie del equipo tenga que tipear lo mismo dos veces.</p>
+    <div class="tabs">
+      <button class="tab-btn active" data-target="view-arch">Arquitectura</button>
+      <button class="tab-btn" data-target="view-demo">Demo en vivo</button>
+    </div>
+  </header>
+
+  <!-- ARQUITECTURA -->
+  <section class="view active" id="view-arch">
+    <h2 class="view-title">Cómo se conecta todo</h2>
+    <p class="view-desc">Cada etapa entrega su resultado a la siguiente. Nadie del equipo mueve datos a mano entre sistemas.</p>
+
+    <div class="pipeline">
+      <div class="pipeline-line"><div class="pulse"></div></div>
+
+      <div class="stop t1">
+        <div class="dot">01</div>
+        <div class="stop-card">
+          <div class="stop-eyebrow">Embudo de ventas</div>
+          <h3 class="stop-title">Captura y derivación de leads</h3>
+          <p class="stop-desc">Un formulario o un comentario en un anuncio de Instagram/Facebook entra directo al sistema, se clasifica por interés y urgencia, y llega limpio al equipo comercial — sin planillas sueltas ni mensajes perdidos.</p>
+          <div class="chips">
+            <span class="chip hi">Make / Zapier</span>
+            <span class="chip hi">Kommo · HubSpot · ActiveCampaign</span>
+            <span class="chip">Meta Ads / Instagram</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop t2">
+        <div class="dot">02</div>
+        <div class="stop-card">
+          <div class="stop-eyebrow">Respuesta y nutrición</div>
+          <h3 class="stop-title">Bot de WhatsApp para consultas frecuentes</h3>
+          <p class="stop-desc">Las preguntas típicas — precio, fecha de inicio, modalidad — se responden al instante. Si la consulta es más compleja, el bot la deriva a una persona en vez de inventar una respuesta.</p>
+          <div class="chips">
+            <span class="chip hi">ManyChat · Voiceflow</span>
+            <span class="chip hi">ChatGPT API / OpenAI</span>
+            <span class="chip">WhatsApp · Email</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop t3">
+        <div class="dot">03</div>
+        <div class="stop-card">
+          <div class="stop-eyebrow">Plataforma académica</div>
+          <h3 class="stop-title">Alta automática al confirmar el pago</h3>
+          <p class="stop-desc">Apenas se acredita el pago, el alumno queda dado de alta en el LMS, se genera el comprobante y recibe sus accesos por email — todo en el mismo minuto, sin intervención manual.</p>
+          <div class="chips">
+            <span class="chip hi">Make</span>
+            <span class="chip hi">LMS</span>
+            <span class="chip">Facturación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop t4">
+        <div class="dot">04</div>
+        <div class="stop-card">
+          <div class="stop-eyebrow">Procesos internos</div>
+          <h3 class="stop-title">Alertas y reportes para el equipo de soporte</h3>
+          <p class="stop-desc">El sistema avisa solo cuando un alumno deja de entrar a la plataforma, y junta las notas o el avance en un reporte semanal — el equipo deja de perseguir esa información.</p>
+          <div class="chips">
+            <span class="chip hi">Airtable · Notion · Sheets</span>
+            <span class="chip">Alertas automáticas</span>
+            <span class="chip">Reportes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="footnote">Esta misma lógica ya la construí en producción: clasificación de leads con IA (LeadFlow AI), un sistema de triage con validación humana, y un checkout con despacho automático por WhatsApp. Acá está adaptada al recorrido de un alumno.</p>
+  </section>
+
+  <!-- DEMO -->
+  <section class="view" id="view-demo">
+    <h2 class="view-title">Demo en vivo</h2>
+    <p class="view-desc">Cuatro piezas simuladas — tocá los botones para ver cómo correría cada automatización.</p>
+
+    <div class="grid">
+
+      <!-- MODULE 1: LEADS -->
+      <div class="card">
+        <div class="card-head">
+          <h3 class="card-title">Captura de leads</h3>
+          <span class="card-flag flag-teal">01 · Ventas</span>
+        </div>
+        <div class="card-body">
+          <button class="btn" id="btnLead">Simular nuevo lead de Instagram</button>
+          <div class="lead-queue" id="leadQueue"></div>
+        </div>
+        <div class="small-tools">Make → CRM (Kommo / HubSpot)</div>
+      </div>
+
+      <!-- MODULE 2: BOT -->
+      <div class="card">
+        <div class="card-head">
+          <h3 class="card-title">Bot de respuesta</h3>
+          <span class="card-flag flag-gold">02 · Nutrición</span>
+        </div>
+        <div class="card-body">
+          <div class="chat-window" id="chatWindow">
+            <div class="bubble bot"><span class="tag">Bot · automático</span>Hola 👋 ¿en qué te puedo ayudar con la inscripción?</div>
+          </div>
+          <div class="quick-q">
+            <button class="qbtn" data-q="precio">¿Cuánto cuesta el curso?</button>
+            <button class="qbtn" data-q="inicio">¿Cuándo empieza?</button>
+            <button class="qbtn" data-q="certificado">¿Da certificado?</button>
+          </div>
+        </div>
+        <div class="small-tools">ManyChat / Voiceflow + ChatGPT API</div>
+      </div>
+
+      <!-- MODULE 3: PAGO -> LMS -->
+      <div class="card">
+        <div class="card-head">
+          <h3 class="card-title">Alta automática</h3>
+          <span class="card-flag flag-coral">03 · LMS</span>
+        </div>
+        <div class="card-body">
+          <button class="btn" id="btnPago">Simular pago aprobado</button>
+          <div class="checklist" id="checklist"></div>
+        </div>
+        <div class="small-tools">Make → LMS → Facturación → Email</div>
+      </div>
+
+      <!-- MODULE 4: ALERTS -->
+      <div class="card">
+        <div class="card-head">
+          <h3 class="card-title">Alertas internas</h3>
+          <span class="card-flag flag-purple">04 · Soporte</span>
+        </div>
+        <div class="card-body">
+          <div class="alert-list">
+            <div class="alert-item"><span>Marina G. — Curso Marketing Digital</span><span class="alert-days">7 días inactiva</span></div>
+            <div class="alert-item"><span>Tomás R. — Curso Ventas</span><span class="alert-days">5 días inactivo</span></div>
+            <div class="alert-item"><span>Carla F. — Curso Excel</span><span class="alert-days">4 días inactiva</span></div>
+          </div>
+          <button class="btn btn-ghost" id="btnReport">Generar reporte semanal</button>
+          <div class="report-box" id="reportBox"></div>
+        </div>
+        <div class="small-tools">Airtable / Notion / Sheets</div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+
+  // module 1: leads
+  const leadNames = [
+    {name:"Sofía Méndez", course:"Marketing Digital", priority:"alta"},
+    {name:"Brian Castro", course:"Excel Avanzado", priority:"media"},
+    {name:"Yamila Torres", course:"Community Manager", priority:"alta"},
+    {name:"Diego Aguirre", course:"Ventas B2B", priority:"media"}
+  ];
+  let leadIdx = 0;
+  document.getElementById('btnLead').addEventListener('click', ()=>{
+    const l = leadNames[leadIdx % leadNames.length];
+    leadIdx++;
+    const queue = document.getElementById('leadQueue');
+    const item = document.createElement('div');
+    item.className = 'lead-item';
+    item.innerHTML = `<div><span class="lead-name">${l.name}</span><br><span class="lead-meta">Interés: ${l.course} · vía Instagram</span></div>
+      <div><span class="badge badge-${l.priority}">${l.priority === 'alta' ? 'Prioridad alta' : 'Prioridad media'}</span></div>`;
+    queue.prepend(item);
+    setTimeout(()=>{
+      const badgeHolder = item.querySelector('div:last-child');
+      const routed = document.createElement('span');
+      routed.className = 'badge badge-routed';
+      routed.textContent = 'Enviado a Comercial ✓';
+      badgeHolder.appendChild(routed);
+    }, 700);
+    if (queue.children.length > 4) queue.removeChild(queue.lastChild);
+  });
+
+  // module 2: chat bot
+  const answers = {
+    precio: "El curso tiene un valor de $45.000. Incluye materiales y certificado.",
+    inicio: "La próxima cohorte arranca el lunes 22. Las clases son los lunes y miércoles.",
+    certificado: "Sí, al finalizar y aprobar el 80% de las clases te llega el certificado digital."
+  };
+  const questionText = {
+    precio: "¿Cuánto cuesta el curso?",
+    inicio: "¿Cuándo empieza?",
+    certificado: "¿Da certificado?"
+  };
+  document.querySelectorAll('.qbtn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const win = document.getElementById('chatWindow');
+      const userBubble = document.createElement('div');
+      userBubble.className = 'bubble user';
+      userBubble.textContent = questionText[btn.dataset.q];
+      win.appendChild(userBubble);
+      win.scrollTop = win.scrollHeight;
+      setTimeout(()=>{
+        const botBubble = document.createElement('div');
+        botBubble.className = 'bubble bot';
+        botBubble.innerHTML = `<span class="tag">Bot · automático</span>${answers[btn.dataset.q]}`;
+        win.appendChild(botBubble);
+        win.scrollTop = win.scrollHeight;
+      }, 550);
+    });
+  });
+
+  // module 3: pago -> LMS checklist
+  const steps = [
+    "Pago confirmado",
+    "Alta creada en el LMS",
+    "Comprobante generado",
+    "Accesos enviados por email"
+  ];
+  document.getElementById('btnPago').addEventListener('click', ()=>{
+    const list = document.getElementById('checklist');
+    list.innerHTML = '';
+    steps.forEach((s, i)=>{
+      setTimeout(()=>{
+        const row = document.createElement('div');
+        row.className = 'check-step';
+        row.style.animationDelay = '0s';
+        const now = new Date();
+        const t = now.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+        row.innerHTML = `<span class="check-circle">✓</span><span class="check-label">${s}</span><span class="check-time">${t}</span>`;
+        list.appendChild(row);
+      }, i * 650);
+    });
+  });
+
+  // module 4: report
+  document.getElementById('btnReport').addEventListener('click', ()=>{
+    const box = document.getElementById('reportBox');
+    box.textContent = "Reporte semanal: 3 alumnos sin actividad hace más de 4 días. Se notificó automáticamente a sus tutores asignados para seguimiento.";
+    box.classList.add('show');
+  });
+</script>
+
+</body>
+</html>

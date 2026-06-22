@@ -207,6 +207,60 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
 {
+  id: "licenciada-ana-paris",
+  isFeatured: true,
+  title: "Lic. Ana Paris — Ecosistema Digital Completo",
+  problem: "La Lic. Ana Paris, psicóloga (UNC) y doula especializada en acompañamiento a familiares que atraviesan la problemática de adicción de un ser querido, cuenta con años de trayectoria clínica y un proyecto editorial propio (libro, guía y audiolibro), pero no tenía presencia digital: sin sitio web, sin forma de vender sus productos digitales, sin sistema de inscripción para sus talleres y sin visibilidad en buscadores. Su alcance estaba limitado a Córdoba, a pesar de atender pacientes en toda Latinoamérica y España.",
+  solution: "Diseño y desarrollo de un ecosistema digital completo de principio a fin: sitio web institucional en React + TypeScript con identidad visual propia (paleta navy/cream/gold), dos programas de acompañamiento documentados con flujos de inscripción por WhatsApp, integración con Hotmart para venta internacional de productos digitales (e-book, guía y audiolibro) con cobro en ARS y USD, y sistema de SEO/GEO/AEO completo —incluyendo Schema.org, FAQ estructurado y archivo llms.txt— para que tanto buscadores tradicionales como modelos de IA (ChatGPT, Perplexity, Gemini) puedan encontrarla y citarla correctamente. Todo el flujo de contacto se canalizó por WhatsApp Business para máxima conversión y simplicidad de uso.",
+  stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "React Router DOM", "Motion (Framer Motion)", "Hotmart", "WhatsApp Business API", "Schema.org", "MercadoPago", "PayPal", "Vercel", "Google Antigravity"],
+  contribution: "• Relevamiento de necesidades reales en reuniones de trabajo continuas con la clienta\n• Diseño y desarrollo completo del sitio web (componentes, rutas, identidad visual)\n• Estructuración de dos programas de acompañamiento (grupal e individual VIP) con lógica de cupos y flujos de WhatsApp diferenciados\n• Integración de Hotmart para venta internacional de e-book, guía y audiolibro con cobro dual ARS/USD\n• Implementación de SEO técnico completo: meta tags, Open Graph, Twitter Cards, sitemap.xml y robots.txt\n• Implementación de AEO (Answer Engine Optimization): Schema.org (Person, Service, FAQPage, BreadcrumbList) y archivo llms.txt para optimizar citación por modelos de IA generativa\n• Diseño de piezas de comunicación: og:image, flyers de talleres y CV profesional de la clienta\n• Elaboración de propuesta comercial estructurada por etapas (sitio → marketing digital → redes → publicidad paga)\n• Documento README técnico completo para mantenibilidad del proyecto\n• Proyecto vivo con expansión planificada a dos libros adicionales bajo el mismo modelo de ecosistema",
+  metrics: "🌐 Sitio + e-commerce digital + automatización de contacto | 🌍 Alcance ampliado a LATAM y España | 📚 Modelo replicable para 2 libros adicionales",
+  liveUrl: "https://licenciadaanaparis.com",
+  image: "licenciadaAnaParis.jpg",
+},
+{
+  id: "automatizacion-academia-idiomas",
+  isFeatured: true,
+  title: "Automatización Academia de Idiomas con Make (Propuesta Técnica)",
+  problem:
+    "Una academia de idiomas que capta alumnos por redes sociales enfrenta cuatro cuellos de botella manuales: las consultas de Instagram/WhatsApp no se priorizan ni se derivan a tiempo al equipo comercial, las mismas preguntas frecuentes (precio, fecha de inicio, certificado) se responden una por una sin automatización, el alta en el LMS tras un pago aprobado depende de que alguien la haga a mano, y no hay visibilidad sobre qué alumnos dejaron de tener actividad hasta que ya es tarde para retenerlos.",
+  solution:
+    "Diseño de un sistema de automatización end-to-end para el recorrido del alumno, modular y pensado para integrarse con herramientas no-code que ya usa el equipo: captura y priorización automática de leads con derivación al área comercial, bot de primera respuesta (ManyChat/Voiceflow + IA) que resuelve preguntas frecuentes 24/7, flujo de alta automática que conecta el pago aprobado con la creación del usuario en el LMS, la facturación y el envío de accesos por email, y un módulo de alertas que detecta inactividad y genera reportes semanales automáticos.",
+  stack: ["ManyChat", "Voiceflow", "Make", "ChatGPT API", "Airtable", "Notion", "Google Sheets", "Automatización de Leads", "Chatbots", "Integración de Pagos", "Reporting Automatizado"],
+  contribution:
+    "• Diseño de la arquitectura completa de automatización (4 módulos) para el ciclo de vida del alumno\n" +
+    "• Mapeo del flujo de leads con clasificación de prioridad y derivación automática al equipo comercial\n" +
+    "• Diseño del bot de primera respuesta con manejo de preguntas frecuentes\n" +
+    "• Diseño del flujo pago → alta en LMS → facturación → notificación, sin intervención manual\n" +
+    "• Diseño del sistema de alertas de inactividad con generación de reportes\n" +
+    "• Desarrollo de demo interactivo en HTML/CSS/JS para presentar y simular cada módulo en funcionamiento\n" +
+    "• Propuesta técnica preparada para proceso de selección como Asistente de Automatización IA",
+  metrics: "🤖 Bot de respuesta 24/7 | ⚡ Alta automática sin intervención manual | 📊 Reportes de inactividad automatizados | 🎯 4 módulos simulados en demo interactivo",
+  liveUrl: "https://showcase-de-automatizaciones-y-webs.vercel.app/automatizacion-academia-idiomas.html",
+  image: "automatizacionAcademiaMake.jpg",
+},
+{
+  id: "automatizacion-academia-idiomas-n8n",
+  isFeatured: true,
+  title: "Automatización Academia de Idiomas con n8n (Propuesta Técnica)",
+  problem:
+    "La misma academia de idiomas necesitaba validar si esta automatización podía construirse íntegramente sobre n8n self-hosted, sin depender de licencias de herramientas no-code de terceros, manteniendo trazabilidad completa de cada ejecución para poder auditar el recorrido de cada alumno.",
+  solution:
+    "Misma automatización end-to-end del recorrido del alumno, diseñada esta vez sobre n8n self-hosted: workflows con triggers (Webhook, Schedule), nodos de lógica (Function/IF) y de acción (HTTP Request, Send Email), con trazabilidad completa de cada ejecución y control total sobre la infraestructura, sin depender de plataformas no-code de terceros.",
+  stack: ["n8n (self-hosted Docker)", "Webhook", "HTTP Request", "OpenAI API", "Function Nodes", "Schedule Trigger", "Workflow Automation", "API Integration", "Automatización de Leads"],
+  contribution:
+    "• Diseño de 4 workflows de n8n (captura de leads, bot conversacional, alta automática, alertas) con arquitectura de nodos documentada\n" +
+    "• Definición de triggers, nodos de lógica/transformación and nodos de acción para cada flujo\n" +
+    "• Diseño de trazabilidad de ejecución (traza visual nodo por nodo)\n" +
+    "• Desarrollo de demo interactivo en HTML/CSS/JS que simula la ejecución de cada workflow\n" +
+    "• Implementación en curso de los workflows reales en n8n self-hosted (Docker)\n" +
+    "• Propuesta técnica preparada para proceso de selección como Asistente de Automatización IA",
+  metrics: "⚙️ 4 workflows diseñados nodo por nodo | 🐳 Self-hosted en Docker | 🔍 Trazabilidad completa de ejecución",
+  liveUrl: "https://showcase-de-automatizaciones-y-webs.vercel.app/automatizacion-academia-idiomas-n8n.html",
+  // repoUrl: agregar acá cuando subas el repo con los workflows .json reales de n8n
+  image: "automatizacionAcademiaN8N.jpg",
+},
+{
   id: "analisis-sentimientos-gemini",
   title: "Sistema de Análisis de Sentimientos de Tweets con n8n y Gemini",
   problem: "Las empresas necesitan monitorear en tiempo real el tono de las menciones en redes sociales, pero el análisis manual es lento y no escala.",
